@@ -98,6 +98,6 @@ class TripServiceTest {
     }
 
     private void loggedInUserIs(User user) {
-        doReturn(user).when(tripService).getUser();
+        doReturn(user).when(tripService).loggedInUser();
     }
 }
