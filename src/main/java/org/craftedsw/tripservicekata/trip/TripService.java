@@ -1,6 +1,5 @@
 package org.craftedsw.tripservicekata.trip;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
