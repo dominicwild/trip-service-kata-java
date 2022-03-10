@@ -13,24 +13,13 @@ public class TripService {
 		List<Trip> tripList = new ArrayList<>();
 		User loggedInUser = getUser();
 		if (loggedInUser != null) {
-			if (isFriendsWith(user, loggedInUser)) {
+			if (user.isFriendsWith(loggedInUser)) {
 				tripList = tripsBy(user);
 			}
 			return tripList;
 		} else {
 			throw new UserNotLoggedInException();
 		}
-	}
-
-	private boolean isFriendsWith(User user, User loggedInUser) {
-		boolean isFriend = false;
-		for (User friend : user.getFriends()) {
-			if (friend.equals(loggedInUser)) {
-				isFriend = true;
-				break;
-			}
-		}
-		return isFriend;
 	}
 
 	protected List<Trip> tripsBy(User user) {
